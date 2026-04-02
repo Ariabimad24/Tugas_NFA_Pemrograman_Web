@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sistem Manajemen Transportasi - Aria Bima Darmawan - 0110223228</title>
+</head>
+
+<body>
+
+    <h2>Sistem Penyewaan Kendaraan</h2>
+
+    <label>Nama:</label>
+    <input type="text" id="nama"><br><br>
+
+    <label>Nomor Telepon:</label>
+    <input type="text" id="telepon"><br><br>
+
+    <label>Kendaraan:</label>
+    <select id="kendaraan">
+        <option value="Mobil">Mobil</option>
+        <option value="Motor">Motor</option>
+    </select><br><br>
+
+    <button onclick="tambahPelanggan()">Sewa Kendaraan</button>
+
+    <h3>Daftar Pelanggan yang Menyewa</h3>
+    <p>Contoh list: John Doe | 08123456789 | Kendaraan: Mobil | John Doe menyewa Mobil</p>
+    <ul id="daftar"></ul>
+
+    <script>
+
+        class Pelanggan {
+            constructor(nama, nomorTelepon, kendaraanDisewa) {
+                this.nama = nama;
+                this.nomorTelepon = nomorTelepon;
+                this.kendaraanDisewa = kendaraanDisewa;
+            }
+
+            transaksi() {
+                return this.nama + " menyewa " + this.kendaraanDisewa;
+            }
+        }
+
+        let daftarPelanggan = [];
+
+        function tambahPelanggan() {
+            let nama = document.getElementById("nama").value;
+            let telepon = document.getElementById("telepon").value;
+            let kendaraan = document.getElementById("kendaraan").value;
+
+            let pelangganBaru = new Pelanggan(nama, telepon, kendaraan);
+            daftarPelanggan.push(pelangganBaru);
+
+            tampilkanPelanggan();
+        }
+
+        function tampilkanPelanggan() {
+            let list = document.getElementById("daftar");
+            list.innerHTML = ""; // Bersihkan daftar di ul sebelum menampilkan ulang
+
+            daftarPelanggan.forEach(function (p) {
+                let item = document.createElement("li");
+                item.textContent = p.nama + " | " + p.nomorTelepon + " | Kendaraan: " + p.kendaraanDisewa;
+                // Pakai method dari class Pelanggan untuk menampilkan transaksi
+                item.textContent += " | " + p.transaksi();
+                list.appendChild(item);
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

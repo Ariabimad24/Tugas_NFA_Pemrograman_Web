@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menghitung Luas Bangun Datar - Aria Bima Darmawan - 0110223228</title>
+</head>
+
+<body>
+
+    <h2>Perhitungan Luas Bangun Datar dengan JavaScript - Pertemuan 1</h2>
+
+    <script>
+
+        // Fungsi untuk menghitung luas persegi panjang
+        // Rumus: luas = panjang * lebar
+        function luasPersegiPanjang(panjang, lebar) {
+            let luas = panjang * lebar; // mengalikan panjang dan lebar
+            return luas; // mengembalikan hasil luas
+        }
+
+        // Fungsi untuk menghitung luas bujur sangkar
+        // Rumus: luas = sisi * sisi
+        function luasBujurSangkar(sisi) {
+            let luas = sisi * sisi; // sisi dikalikan dengan sisi
+            return luas; // mengembalikan hasil luas
+        }
+
+        // Fungsi untuk menghitung luas segitiga
+        // Rumus: luas = 1/2 * alas * tinggi
+        function luasSegitiga(alas, tinggi) {
+            let luas = 0.5 * alas * tinggi; // setengah dari alas dikali tinggi
+            return luas; // mengembalikan hasil luas
+        }
+
+
+        // Variabel nilai contoh dan let yang berarti variabel bisa diubah nilainya
+        let panjang = 10;
+        let lebar = 5;
+        let sisi = 4;
+        let alas = 8;
+        let tinggi = 6;
+
+
+        // Menampilkan hasil ke halaman web
+        // Menggunakan + untuk menggabungkan string dengan hasil perhitungan
+        document.write("Luas Persegi Panjang: " + luasPersegiPanjang(panjang, lebar) + "<br>");
+        document.write("Luas Bujur Sangkar: " + luasBujurSangkar(sisi) + "<br>");
+        document.write("Luas Segitiga: " + luasSegitiga(alas, tinggi) + "<br>");
+        
+        document.write("Aria Bima Darmawan - 0110223228");
+
+    </script>
+
+</body>
+
+</html>
