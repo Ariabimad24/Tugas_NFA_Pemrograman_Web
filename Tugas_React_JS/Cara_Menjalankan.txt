@@ -1,0 +1,17 @@
+# LANGKAH 1 — Clone folder BookStore aja
+git clone --no-checkout https://github.com/Ariabimad24/Tugas_NFA_Pemrograman_Web.git
+cd Tugas_NFA_Pemrograman_Web
+git sparse-checkout init
+git sparse-checkout set Tugas_React_JS/Tugas_Pertemuan_1_React_JS/BookStore
+git checkout master
+rm -f Tampilan_Tugas_Pertemuan_1.png
+rm -f Tugas_Pertemuan_1_AriaBimaDarm*
+
+# LANGKAH 2 — Masuk ke folder project
+cd Tugas_React_JS/Tugas_Pertemuan_1_React_JS/BookStore
+
+# LANGKAH 3 — Install dependencies
+npm install
+
+# LANGKAH 4 — Jalanin website
+npm run dev
